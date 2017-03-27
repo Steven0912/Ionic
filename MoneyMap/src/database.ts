@@ -48,6 +48,16 @@ export class Transaction implements ITransaction {
     return db.transactions.add(this);
   }
 
+  setCoords(coords){
+    this.lat = coords.latitude;
+    this.lon = coords.longitude;
+  }
+
+  cleandCoords(){
+    this.lat = null;
+    this.lon = null;
+  }
+
   static all() {
     // Transaction.all() devuelve todas las transacciones
     // retorna un promise
